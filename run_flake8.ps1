@@ -4,7 +4,7 @@ param(
 
     [Parameter(Mandatory = $false, Position = 1)]
     [ValidateSet("initial", "final")]
-    [string]$Stage = "initial"
+    [string]$Stage = "final"
 )
 
 $RepoRoot = $PSScriptRoot
@@ -33,8 +33,10 @@ Write-Host "Text Report: $ReportFile"
 Write-Host "HTML Report: $HtmlDir\index.html"
 Write-Host "=================================================="
 
-# Generate text report to console and file
-& $Flake8Exe $Target 2>&1 | Tee-Object -FilePath $ReportFile
+# Generate text report to console and file with UTF-8 encoding
+$output = & $Flake8Exe $Target 2>&1
+$output | Out-Host
+$output | Out-File -FilePath $ReportFile -Encoding utf8
 
 # Generate HTML report
 & $Flake8Exe --format=html --htmldir=$HtmlDir $Target 2>$null
