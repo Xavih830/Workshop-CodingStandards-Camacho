@@ -1,0 +1,40 @@
+# Dependencias y herramientas locales
+tools/
+**/tools/
+.venv/
+**/__pycache__/
+*.py[cod]
+*$py.class
+
+# Compilados de Java
+*.class
+*.jar
+*.war
+*.ear
+
+# Entornos de desarrollo e IDEs
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.project
+.classpath
+.settings/
+
+# Archivos del sistema y temporales
+Thumbs.db
+Desktop.ini
+.DS_Store
+*.tmp
+*.bak
+*.log
+
+# Variables de entorno y datos sensibles
+.env
+.env.*
+*.pem
+*.key
+
+# Documentación interna (solicitado no incluir en el repositorio)
+docs/
