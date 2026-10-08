@@ -1,40 +1,39 @@
-# Workshop Coding Standards (Java y Python)
+# Student Grade Management System - Coding Standards Lab
 
-Repositorio preparado para el workshop de Ingeniería de Software (ESPOL) enfocado en la aplicación de estándares de codificación mediante herramientas de análisis estático en Java y Python.
+This repository contains the practical assignment for the Software Engineering II Coding Standards lab at ESPOL (Section A - Python).
 
-## Estructura del Proyecto
+The project starts from an intentionally flawed base program (`test.py`) that exhibits poor naming conventions, syntax/runtime errors, and missing functionality. The objective is to identify violations using static analysis tools (Flake8 and Pylint), refactor the code according to PEP 8 standards and project requirements, and collect initial and final quality reports.
 
-```
-workshop-coding-standards/
-  README.md
-  .gitignore
-  java/
-    src/                     # Código fuente Java a evaluar
-    tools/                   # Artefactos y binarios de analizadores (Checkstyle, PMD)
-    run_checkstyle_sun.ps1   # Script de análisis Checkstyle (Sun Checks)
-    run_checkstyle_google.ps1# Script de análisis Checkstyle (Google Checks)
-    run_pmd.ps1              # Script de análisis PMD (Quickstart)
-  python/
-    src/                     # Código fuente Python a evaluar
-    requirements.txt         # Dependencias (pylint, flake8)
-    run_pylint.ps1           # Script de análisis Pylint
-    run_flake8.ps1           # Script de análisis Flake8
-  reports/
-    initial/                 # Reportes generados en fase inicial
-    final/                   # Reportes generados en fase final
-    ensayo/                  # Reportes de prueba de humo
-  evidencias/                # Capturas de pantalla y evidencias
-  informe/
-    plantilla_informe.md     # Estructura del informe técnico del workshop
-```
+## Project Structure
 
-## Herramientas y Versiones
+- `test.py`: Student grade management source code.
+- `run_flake8.ps1`: Script to run Flake8 and produce console, text, and HTML reports.
+- `run_pylint.ps1`: Script to run Pylint and generate text and HTML reports.
+- `requirements.txt`: Pinned Python dependencies.
+- `reports/`:
+  - `initial/`: Initial reports generated from the base code.
+  - `final/`: Final reports generated after refactoring.
+- `evidencias/`: Folder for screenshots to be included in the report.
+- `.github/workflows/coding-standards.yml`: CI workflow running linter checks on pull requests.
 
-- **Sistema Operativo:** Windows 64-bit (PowerShell)
-- **Java JDK:** 23.0.1 (Oracle Corporation)
-- **Python:** 3.14.5
-- **Git:** 2.47.1.windows.2
-- **Checkstyle:** *Pendiente de descarga en Paso 3*
-- **PMD:** *Pendiente de descarga en Paso 3*
-- **Pylint:** *Pendiente de instalación en Paso 2*
-- **Flake8:** *Pendiente de instalación en Paso 2*
+## Setup and Usage
+
+1. Create and activate a virtual environment:
+   ```powershell
+   python -m venv .venv
+   .\.venv\Scripts\Activate.ps1
+   pip install -r requirements.txt
+   ```
+
+2. Run linters:
+   ```powershell
+   # Initial baseline run
+   .\run_flake8.ps1 test.py initial
+   .\run_pylint.ps1 test.py initial
+
+   # Final verification run
+   .\run_flake8.ps1 test.py final
+   .\run_pylint.ps1 test.py final
+   ```
+
+Interactive HTML reports are saved to `reports/initial/flake8_html/index.html` (or `reports/final/flake8_html/index.html`).

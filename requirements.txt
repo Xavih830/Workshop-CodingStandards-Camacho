@@ -1,0 +1,17 @@
+astroid==4.3.4
+colorama==0.4.6
+dill==0.4.1
+flake8==7.4.1
+flake8-html==0.4.3
+isort==9.0.2
+Jinja2==3.1.6
+MarkupSafe==3.0.4
+mccabe==0.7.0
+mypy_extensions==1.1.0
+platformdirs==4.12.4
+pycodestyle==2.15.0
+pyflakes==4.0.3
+Pygments==2.21.0
+pylint==4.1.2
+pylint-json2html==0.5.0
+tomlkit==0.15.1

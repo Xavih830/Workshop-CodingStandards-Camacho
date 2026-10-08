@@ -1,4 +1,4 @@
-# Dependencias y herramientas locales
+# Local tools and dependencies
 tools/
 **/tools/
 .venv/
@@ -6,13 +6,13 @@ tools/
 *.py[cod]
 *$py.class
 
-# Compilados de Java
+# Java compiled files
 *.class
 *.jar
 *.war
 *.ear
 
-# Entornos de desarrollo e IDEs
+# IDEs and development environments
 .idea/
 .vscode/
 *.swp
@@ -22,7 +22,7 @@ tools/
 .classpath
 .settings/
 
-# Archivos del sistema y temporales
+# System and temporary files
 Thumbs.db
 Desktop.ini
 .DS_Store
@@ -30,11 +30,11 @@ Desktop.ini
 *.bak
 *.log
 
-# Variables de entorno y datos sensibles
+# Environment variables and sensitive data
 .env
 .env.*
 *.pem
 *.key
 
-# Documentación interna (solicitado no incluir en el repositorio)
+# Internal documentation and guides (excluded from repository)
 docs/
